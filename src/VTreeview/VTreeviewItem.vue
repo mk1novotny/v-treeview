@@ -1,10 +1,11 @@
 <template>
   <li class="tree-node" >
     <span class="toggle-icon" :class="{ 'empty-toggle': !isFolder }" :key="open">
-      <i v-if="isFolder" :class="{'fas fa-caret-down' : this.open, 'fas fa-caret-right' : !this.open}" ></i>
-    </span>    
+      <i v-if="isFolder" class="material-icons" >{{ this.open ? 'chevron_right' :  'expand_more' }}"</i>
+    </span>
     <span class="tree-icon" :class="{ 'empty-toggle': !icon }" :key="icon">
-      <i v-if="icon" class="far" :class="icon" ></i>
+      <i v-if="icon" class="material-icons" >{{icon}}</i>
+    </span>
     </span>
     <input type="radio" name="rad" v-model="checked" :id="model.id" :value="model.id">        
     <label v-show="!edit" class="tree-text" :class="{ 'searched-text': isSearchText }" :for="model.id" @click="toggle" @contextmenu.prevent="showContextMenu" key="label">{{model.text}}</label>    
