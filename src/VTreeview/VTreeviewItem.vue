@@ -1,7 +1,7 @@
 <template>
   <li class="tree-node" >
     <span class="toggle-icon" :class="{ 'empty-toggle': !isFolder }" :key="open">
-      <i v-if="isFolder" class="material-icons" >{{ this.open ? 'chevron_right' :  'expand_more' }}"</i>
+      <i v-if="isFolder" class="material-icons" >{{ this.open ?  'expand_more' : 'chevron_right' }}</i>
     </span>
     <span class="tree-icon" :class="{ 'empty-toggle': !icon }" :key="icon">
       <i v-if="icon" class="material-icons" >{{icon}}</i>
@@ -107,51 +107,54 @@ export default {
 </script>
 
 <style scoped>
-ul {
-  display: block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-ul .tree-node {
-  display: block;
-  padding-left: 15px;
-}
-.toggle-icon {
-  display: inline-block;
-  width: 20px;
-}
+  i{
+    font-size: 16px;
+  }
+  ul {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul .tree-node {
+    display: block;
+    padding-left: 15px;
+  }
+  .toggle-icon {
+    display: inline-block;
+    width: 20px;
+  }
 
-ul .tree-node :hover:before {
-  background: rgba(190, 235, 255, 0.3);
-}
+  ul .tree-node :hover:before {
+    background: rgba(190, 235, 255, 0.3);
+  }
 
-ul .tree-node input[type='radio'] {
-  display: none;
-}
-ul .tree-node input[type='radio']:checked + label:before {
-  background: rgba(83, 215, 220, 0.3);
-}
+  ul .tree-node input[type='radio'] {
+    display: none;
+  }
+  ul .tree-node input[type='radio']:checked + label:before {
+    background: rgba(83, 215, 220, 0.3);
+  }
 
-ul label {
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-ul label:before {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  content: '';
-  height: 21px;
-  left: 0;
-  position: absolute;
-  right: 0;
-}
+  ul label {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  ul label:before {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    content: '';
+    height: 21px;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
 
-.searched-text {
-  font-style: italic;
-  color: #cc0000;
-}
+  .searched-text {
+    font-style: italic;
+    color: #cc0000;
+  }
 </style>

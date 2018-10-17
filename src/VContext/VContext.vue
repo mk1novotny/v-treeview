@@ -3,7 +3,7 @@
       <ul class="list-unstyled">
         <li v-for="(item) in contextItems" :key="item.title" @click="click(item.title)">
           <span>
-            <i :class="item.icon"></i>
+            <i class="material-icons">{{item.icon}}</i>
           </span>
           <span>{{item.title}}</span>
         </li>
@@ -54,19 +54,22 @@ export default {
 </script>
 
 <style scoped>
-ul {
-  display: block;
-  margin: 0;
-  padding: 5px;
-}
+    i {
+        font-size: 12px;
+    }
+    ul {
+      display: block;
+      margin: 0;
+      padding: 5px;
+    }
 
-ul li {
-  list-style: none;
-  cursor: pointer;
-  padding: 5px;
-}
+    ul li {
+      list-style: none;
+      cursor: pointer;
+      padding: 5px;
+    }
 
-li:hover{
-    background: rgba(83, 215, 220, 0.3);
-}
+    li:hover{
+        background: rgba(83, 215, 220, 0.3);
+    }
 </style>
